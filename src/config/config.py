@@ -18,5 +18,3 @@ def get_db_connection():
         cursorclass=DictCursor
     )
     return connection
-
-last = "변경 찐막"
