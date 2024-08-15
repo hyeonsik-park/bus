@@ -19,5 +19,4 @@ def get_db_connection():
     )
     return connection
 
-a = "변경 됐나?"
-b = "진짜 변경됌?"
+last = "변경 찐막"
