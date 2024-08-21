@@ -31,12 +31,12 @@ def login_user(user_login: UserLogin) -> bool:
         user = cursor.fetchone()
 
         if user is None:
-            return False  # 사용자 ID가 존재하지 않음
+            return False, None  # 사용자 ID가 존재하지 않음
 
         if not check_password(user_login.password, user["password"]):  # 비밀번호 검증
-            return False  # 비밀번호 불일치
+            return False, None  # 비밀번호 불일치
 
-        return True  # 인증 성공
+        return True, user["id"]  # 인증 성공, user_id 반환
     except Exception as e:
         raise e
     finally:
